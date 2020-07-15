@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>03</title>
+    <meta charset="utf-8">
+    <style type="text/css">
+        body{
+            background-image: url("image1/19.jpg");/*设置背景图像*/
+        }
+        h1{
+            text-align: center;
+            color: black;
+            margin-top: 20px;
+            font-size: 40px;
+            font-weight: lighter;}/*设置标题样式*/
+.a{
+    margin-top:100px ;
+    margin-left: 300px;
+    width: 700px;
+    height: 500px;
+    
+}
+.broadcast{
+    
+    width: 1000px;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+}
+/*设置轮播区域的位置和大小*/
+.broadcast ul{
+    padding: 0;
+    list-style: none;
+    
+}/*设置轮播列表的样式*/
+.broadcast li{
+    float: left;
+    list-style: none;                                                                                            
+}/*设置轮播列表的样式*/
+.broadcast img{
+    width: 1000px;
+    height: 500px;
+}/*设置轮播图片的样式*/
+.broadcast ol{
+    position: absolute;
+    right: 10px;
+    bottom: 30px;
+}/*设置轮播无序列表的样式*/
+.broadcast ol li{
+    position: relative;
+   float: left;
+   width: 20px;
+   height: 20px;
+   border-radius: 50%;
+   background-color: rgba(155, 155, 155,.45);
+   color: #fff;
+   text-align: center;
+   margin-right: 20px;
+   line-height: 20px;
+}/*设置下方切换图标的样式*/
+
+</style>
+
+</head>
+
+<body>
+    <h1>生活碎片</h1>
+    <div class="a">
+        <div class="broadcast" id="broadcast"> <!-- 轮播图片 -->
+            <ul id="img_list">
+                <li><img src="image1/3.jpg" alt="1"></li>
+                <li><img src="image1/4.jpg"  alt="2"></li>
+                <li><img src="image1/5.jpg" alt="3"></li>
+                <li><img src="image1/6.jpg"  alt="4"></li>
+            </ul>
+            <ol id="button_list"> <!-- 轮播按钮 -->
+                <li >1</li>
+                <li >2</li>
+                <li >3</li>
+                <li >4</li>
+            </ol>
+        </div>
+    </div>
+
+<script type="text/javascript">
+    window.onload = function () {
+    var broadcast = document.getElementById("broadcast"),
+        img_list = document.getElementById("img_list"),
+        button_list = document.getElementById("button_list").getElementsByTagName("li"),
+        index = 0,
+        timer = null;
+    //命名各个变量
+    function imgChange(buttonIndex) {
+        for (let i = 0; i < button_list.length; i++) {
+            button_list[i].className="";
+        }
+        img_list.style.marginLeft = -1000 * buttonIndex + "px";
+        index = buttonIndex;
+    }//用函数设置图片的轮播顺序
+    
+    //鼠标悬停ol
+    for (var i = 0; i < button_list.length; i++) {
+        button_list[i].id = i;
+        button_list[i].onmouseover = function() {
+            clearInterval(timer);
+            imgChange(this.id);
+        }
+    }
+}
+//设置手动切换图片
+
+</script>
+
+</body>
+</html>

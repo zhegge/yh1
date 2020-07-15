@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>05</title>
+    <style type="text/css">
+        body{background-image: url(image1/16.jpg);}/*设置网页的背景图片*/
+        form{width:800px; height:600px; padding: 10px;margin: 250px auto;}/*设置整个表单的样式*/
+        button{background: white;padding: 8px;border-radius: 5px; margin: auto;}/*设置按钮的样式*/
+        input{padding: 15px;background: #f8f8f8;}/*设置输入框的样式*/
+        input:focus{background: grey;}/*当鼠标点击时，输入框的样式*/
+        button:hover{background:grey;padding: 10px;}/*当点击按钮时，按钮的样式*/
+        legend{color: white;}/*外框文字的样式*/
+        fieldset{ border: solid  white 2; }/*外框的样式*/
+    </style>
+</head>
+<body>
+    <form>
+    <fieldset>
+    <legend>发送信息</legend>
+    <input type="text" name="user" placeholder="Name" style="width: 400px;"><br><br>
+   <input type="text" name="name" placeholder="E-mail" style="width: 400px;"><br><br>
+   <input type="text" name="text"   placeholder="电话" style="width: 400px;"><br><br>
+   <!--三个输入框-->
+    <textarea  rows="8" cols="80">
+        你有什么想对我说的～请写在这里
+    </textarea><br>
+    <!--文本域-->
+    <button>Send</button> <!--按钮-->
+    </fieldset>    
+    </form>
+</body>
+</html>
